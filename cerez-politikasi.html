@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çerez Politikası (Cookie Policy) | Şaşkın Soft</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2318181b'/><path d='M55 20 L30 55 L50 55 L45 80 L70 45 L50 45 Z' fill='%2322c55e' stroke='%2322c55e' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/><path d='M62 84 H 82' stroke='%2322c55e' stroke-width='10' stroke-linecap='round'/></svg>">
+    <meta name="description" content="Şaşkın Soft Çerez Kullanımı Politikası detayları.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#fcfcfc] text-slate-800 font-sans antialiased selection:bg-brand-400 selection:text-slate-900">
+
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover-target">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-brand-400 shadow-lg">
+                        <svg class="w-6 h-6 text-brand-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                            <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-slate-900">
+                        Şaşkın<span class="text-brand-600">Soft</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="hizmetler.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Hizmetlerimiz</a>
+                    <a href="hakkimizda.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Ajansımız</a>
+                    <a href="referanslar.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Projelerimiz</a>
+                    <a href="blog.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Blog</a>
+                    <a href="iletisim.html" class="px-6 py-2.5 rounded-full bg-slate-900 text-brand-400 text-sm font-semibold hover:bg-slate-800 transition-all shadow-md transform hover:-translate-y-0.5">
+                        Tanışalım
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Mobil menüyü aç/kapat" class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="hizmetler.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Hizmetlerimiz</a>
+                <a href="hakkimizda.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Ajansımız</a>
+                <a href="referanslar.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Projelerimiz</a>
+                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Blog</a>
+                <a href="iletisim.html" class="block mt-4 px-5 py-3 rounded-xl bg-slate-900 text-brand-400 text-base font-semibold hover:bg-slate-800 mx-4">Tanışalım</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-36 pb-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <div id="saskinMaskot" onclick="triggerSaskinSurprise()" title="Gözler sizi takip ediyor!" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 mb-6 cursor-pointer hover:scale-105 transition-all">
+                <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-full">
+                    <div class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                        <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                    </div>
+                    <div class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                        <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                    </div>
+                    <div class="surprised-mouth w-1.5 h-1.5 rounded-full bg-brand-400"></div>
+                </div>
+                <span class="text-xs font-heading font-bold text-brand-300">Şeffaf Dijital Deneyim</span>
+            </div>
+            <h1 class="font-heading text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Çerez Politikası</h1>
+            <p class="text-slate-400 text-lg">Web sitemizde size daha iyi ve şaşırtıcı bir deneyim sunmak için kullandığımız çerezler.</p>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-100 shadow-lg space-y-8 text-slate-600 leading-relaxed">
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-cookie-bite text-brand-600"></i> 1. Çerez (Cookie) Nedir?
+                    </h2>
+                    <p>
+                        Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınız aracılığıyla bilgisayarınıza veya mobil cihazınıza kaydedilen küçük metin dosyalarıdır. Çerezler, sitenin daha verimli çalışmasını ve kullanıcı tercihlerinin hatırlanmasını sağlar.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-accent-500"></i> 2. Kullandığımız Çerez Türleri
+                    </h2>
+                    <div class="space-y-4 text-slate-700 mt-2">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-1">Zorunlu Çerezler:</h4>
+                            <p class="text-sm">Web sitemizin düzgün çalışması, sayfa navigasyonu ve formların güvenli bir şekilde iletilmesi için teknik olarak zorunlu olan çerezlerdir.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-1">Performans ve Analitik Çerezleri:</h4>
+                            <p class="text-sm">Ziyaretçilerin sitemizde hangi sayfalarda ne kadar vakit geçirdiğini, 3D ve googly eyes animasyonlarıyla nasıl etkileşime girdiğini analiz ederek site performansını artırmamıza yardımcı olan anonim çerezlerdir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-sliders text-brand-600"></i> 3. Çerez Yönetimi
+                    </h2>
+                    <p>
+                        Tarayıcınızın ayarlarını değiştirerek çerez tercihlerinizi dilediğiniz zaman kişiselleştirebilir, mevcut çerezleri silebilir veya çerez kaydını tamamen engelleyebilirsiniz. Ancak zorunlu çerezlerin engellenmesi durumunda sitemizin bazı fonksiyonları beklendiği gibi çalışmayabilir.
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-slate-100 flex justify-between items-center text-sm text-slate-400">
+                    <span>Son Güncelleme: 11 Temmuz 2026</span>
+                    <a href="index.html" class="text-brand-600 font-bold hover:underline">Ana Sayfaya Dön <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-bullhorn text-brand-600 text-xl"></i>
+                        <span class="font-heading font-bold text-xl text-slate-900">Şaşkın<span class="text-brand-600">Soft</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">Dijital dünyada iz bırakan markalar yaratmak için veri ve yaratıcılığı harmanlayan yeni nesil medya ajansı.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Sosyal Medya Yönetimi</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Performans Pazarlama</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">İçerik & Prodüksiyon</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Ajans</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hakkimizda.html" class="hover:text-brand-600">Hakkımızda</a></li>
+                        <li><a href="referanslar.html" class="hover:text-brand-600">Projelerimiz</a></li>
+                        <li><a href="iletisim.html" class="hover:text-brand-600">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">İletişim</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li>Didim, Aydın</li>
+                        <li>hello@saskinsoft.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 pt-8 flex justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2024 Şaşkın Software. Tüm hakları saklıdır.</p>
+                <div class="flex gap-4">
+                    <a href="gizlilik-politikasi.html" class="hover:text-brand-600">Gizlilik Politikası</a>
+                    <a href="cerez-politikasi.html" class="text-brand-600 font-bold">Çerez Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
