@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı QR Kod & NFC Temassız Menü | Restoran ve Kafeler İçin | Şaşkın Soft</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%2318181b'/><g transform='translate(8, 8)'><path d='M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z' fill='%234ade80' stroke='%234ade80' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/><path d='M14.5 20.8H19.5' stroke='%234ade80' stroke-width='2.5' stroke-linecap='round'/></g></svg>">
+    <meta name="description"
+        content="Restoran, kafe ve oteller için yeni nesil NFC temassız menü ve QR kod dijital menü sistemleri. Matbaa masraflarına son, tek dokunuşla menü cepte!">
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN & Özel Tema Konfigürasyonu -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Özel Stil Dosyası -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#fcfcfc] text-slate-800 font-sans antialiased selection:bg-brand-400 selection:text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover-target">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-brand-400 shadow-lg">
+                        <svg class="w-6 h-6 text-brand-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                            <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-slate-900">
+                        Şaşkın<span class="text-brand-600">Soft</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="qr-nfc-menu.html"
+                        class="text-sm font-bold text-brand-600 bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200 flex items-center gap-1.5 shadow-sm hover:bg-brand-100 transition-all">
+                        <i class="fa-solid fa-qrcode"></i> QR & NFC Menü <span
+                            class="bg-brand-500 text-slate-900 text-[10px] font-extrabold px-1.5 py-0.5 rounded-full animate-bounce">ÖZEL</span>
+                    </a>
+                    <a href="hizmetler.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Hizmetlerimiz</a>
+                    <a href="hakkimizda.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Ajansımız</a>
+                    <a href="referanslar.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Projelerimiz</a>
+                    <a href="blog.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Blog</a>
+                    <a href="iletisim.html"
+                        class="px-6 py-2.5 rounded-full bg-slate-900 text-brand-400 text-sm font-semibold hover:bg-slate-800 transition-all shadow-md transform hover:-translate-y-0.5">
+                        Tanışalım
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Mobil menüyü aç/kapat"
+                        class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="qr-nfc-menu.html"
+                    class="block px-3 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-lg">🍽️ QR & NFC Akıllı Menü (ÖZEL)</a>
+                <a href="hizmetler.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Hizmetlerimiz</a>
+                <a href="hakkimizda.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Ajansımız</a>
+                <a href="referanslar.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Projelerimiz</a>
+                <a href="blog.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Blog</a>
+                <a href="iletisim.html"
+                    class="block mt-4 px-5 py-3 rounded-xl bg-slate-900 text-brand-400 text-base font-semibold hover:bg-slate-800 mx-4">
+                    Tanışalım
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Hero for QR & NFC Menu -->
+    <header class="pt-36 pb-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-500/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left reveal">
+                    <!-- Şaşkın Rozet -->
+                    <div id="saskinMaskot" onclick="triggerSaskinSurprise()" title="Fareyi hareket ettirin, gözler sizi takip eder!"
+                        class="hover-target inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800 text-white shadow-lg border border-slate-700 cursor-pointer transform hover:scale-105 transition-all mb-6">
+                        <div class="flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-700">
+                            <!-- Sol Göz -->
+                            <div class="googly-eye w-4 h-4 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                <div class="googly-pupil w-2 h-2 bg-slate-900 rounded-full absolute"></div>
+                            </div>
+                            <!-- Sağ Göz -->
+                            <div class="googly-eye w-4 h-4 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                <div class="googly-pupil w-2 h-2 bg-slate-900 rounded-full absolute"></div>
+                            </div>
+                            <div class="surprised-mouth w-1.5 h-1.5 rounded-full bg-brand-400 mx-0.5"></div>
+                        </div>
+                        <span class="text-xs font-heading font-bold tracking-wide text-brand-300">Restoran & Kafe Çözümü</span>
+                    </div>
+
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Kağıt Menülere Son! <br />
+                        <span class="text-brand-400">Tek Dokunuşla</span> Akıllı NFC & QR Menü.
+                    </h1>
+
+                    <p class="text-slate-300 text-lg md:text-xl mb-8 leading-relaxed">
+                        Restoranınız, kafeniz veya oteliniz için <b>ahşap ve pleksi NFC masa standları</b>. Müşterileriniz telefonu yaklaştırdığı anda şık, iştah açıcı ve çok dilli dijital menünüz saniyeler içinde ekranda!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#nfcFormSection"
+                            class="hover-target px-8 py-4 rounded-full bg-brand-500 text-slate-900 font-extrabold text-lg hover:bg-brand-400 shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> Hemen Ücretsiz Demo İsteyin
+                        </a>
+                        <a href="#ozellikler"
+                            class="hover-target px-8 py-4 rounded-full bg-slate-800 border border-slate-700 text-white font-semibold text-lg hover:bg-slate-700 transition-all text-center flex items-center justify-center gap-2">
+                            Nasıl Çalışır? <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="mt-10 pt-8 border-t border-slate-800 flex items-center gap-8 text-sm text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-400 text-lg"></i>
+                            <span>Anlık Fiyat Değiştirme</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-400 text-lg"></i>
+                            <span>Çoklu Dil (En/De/Ru)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-400 text-lg"></i>
+                            <span>Temassız & Hijyenik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Mockup / NFC Card Illustration -->
+                <div class="relative reveal tilt-card" style="transition-delay: 200ms;">
+                    <div class="bg-gradient-to-tr from-slate-800 to-slate-900 p-6 rounded-3xl border border-slate-700 shadow-2xl relative z-10">
+                        <div class="relative rounded-2xl overflow-hidden shadow-inner border border-slate-800">
+                            <img src="images/qr_nfc_menu_mockup.png"
+                                alt="Akıllı NFC Menü Standı" class="w-full object-cover">
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-500 text-slate-900 flex items-center justify-center font-bold text-xl">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400">Temassız Okuma Hızı</div>
+                                        <div class="text-sm font-bold text-white">0.3 Saniye • Uygulama İndirmeksizin</div>
+                                    </div>
+                                </div>
+                                <span class="bg-brand-500/20 text-brand-400 px-3 py-1 rounded-full text-xs font-bold border border-brand-500/40">AKTİF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 z-20 bg-white text-slate-900 p-4 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-3 animate-float">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 text-xl">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-slate-500">Ortalama Sipariş Artışı</div>
+                            <div class="font-heading font-extrabold text-xl text-slate-900">+%28 Daha Yüksek Ciro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Neden QR & NFC Menü? Section -->
+    <section id="ozellikler" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-heading text-brand-600 font-bold tracking-wider uppercase text-sm block mb-2">Kuruluş Amacımız & Çözümümüz</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Restoran ve Kafeniz İçin Neden Şaşkın NFC Menü?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mt-4 text-lg">Geleneksel matbaa menülerinin sürekli değişen maliyetlerinden kurtulun. İşletmenize prestij, hız ve karlılık kazandırın.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="service-card glass-card rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-3xl mb-6 shadow-sm">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3">NFC ile Tek Dokunuş</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Müşteri telefonunun kamerasını açmak zorunda bile kalmaz! Masadaki şık ahşap veya pleksi NFC standa telefonu yaklaştırması, dijital menünün anında açılması için yeterlidir.
+                    </p>
+                    <span class="inline-flex items-center text-sm font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-lg">Kamera & Uygulama İstemez</span>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="service-card glass-card rounded-3xl p-8 reveal" style="transition-delay: 150ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-accent-100 text-accent-600 flex items-center justify-center text-3xl mb-6 shadow-sm">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3">Anlık Fiyat & Menü Güncelleme</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Fiyatlar değişti mi? Yeni bir lezzet mi eklediniz ya da bir ürün bitti mi? Yönetim panelinizden saniyeler içinde değiştirin, menünüz anında güncellensin. Matbaa masrafı SIFIR.
+                    </p>
+                    <span class="inline-flex items-center text-sm font-bold text-accent-600 bg-accent-50 px-3 py-1 rounded-lg">Sınırsız Fiyat Değiştirme</span>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="service-card glass-card rounded-3xl p-8 reveal" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-3xl mb-6 shadow-sm">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3">Çoklu Dil (Multi-Language) Desteği</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Turistlere menü anlatma derdine son. Sistem müşterinizin telefon dilini otomatik algılar veya tek tıkla İngilizce, Almanca, Rusça, Arapça menü sunar.
+                    </p>
+                    <span class="inline-flex items-center text-sm font-bold text-purple-600 bg-purple-50 px-3 py-1 rounded-lg">Turistik İşletmelere Özel</span>
+                </div>
+            </div>
+
+            <!-- Stand Tasarımları & Görsel İştah Açma -->
+            <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                <div class="order-2 lg:order-1 relative rounded-3xl overflow-hidden bg-slate-900 p-2 shadow-xl border border-slate-100">
+                    <img src="images/qr_nfc_menu_mockup.png" alt="Masa Standı Tasarımları" class="w-full rounded-2xl object-cover opacity-90">
+                </div>
+                <div class="order-1 lg:order-2 space-y-6">
+                    <span class="font-heading text-brand-600 font-bold tracking-wider uppercase text-sm block">Mekanınıza Özel Konsept</span>
+                    <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-slate-900">Masalarınıza Şıklık Katan Lüks Ahşap, Pleksi & Metal Standlar</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        Sıradan, ucuz plastik karekodlar yerine mekanınızın mimari konseptine uygun Lazer Kazımalı Doğal Ahşap, Siyah/Altın Pleksi veya Metal NFC standlar üretiyoruz. Üstelik logonuz ve markanız standın tam merkezinde yer alır!
+                    </p>
+                    <ul class="space-y-3 text-slate-700 font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600 text-lg"></i> Çizilmeye ve Suya Dayanıklı Masa Standları</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600 text-lg"></i> Alerjen Uyarıları, Kalori Bilgisi ve Ürün Videoları Ekleme</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600 text-lg"></i> Google Haritalar Yorum Toplama Modülü (5 Yıldız Garantisi)</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600 text-lg"></i> Sosyal Medya (Instagram) Takipçi Kazandırma Butonları</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nasıl Kurulur? 3 Adım -->
+    <section class="py-20 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="font-heading text-brand-600 font-bold tracking-wider uppercase text-sm block mb-2">Kolay Geçiş Süreci</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">3 Basit Adımda Dijital Menünüze Kavuşun</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md relative reveal">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-900 text-brand-400 font-heading font-extrabold text-2xl flex items-center justify-center mb-6">1</div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">Mevcut Menünüzü İletin</h4>
+                    <p class="text-slate-600 text-sm">PDF, fotoğraf veya yazılı halindeki mevcut menü listenizi ve fiyatlarınızı bize gönderin, her şeyi biz dijitalleştirelim.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md relative reveal" style="transition-delay: 150ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-900 text-brand-400 font-heading font-extrabold text-2xl flex items-center justify-center mb-6">2</div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">Tasarım & Stand Üretimi</h4>
+                    <p class="text-slate-600 text-sm">Restoranınızın konseptine özel ahşap/pleksi NFC standlarınızı logo baskılı olarak üretelim ve kodlayalım.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md relative reveal" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500 text-slate-900 font-heading font-extrabold text-2xl flex items-center justify-center mb-6 shadow-lg shadow-brand-500/30">3</div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-2">Masalara Yerleştirin & Kazanmaya Başlayın</h4>
+                    <p class="text-slate-600 text-sm">Standları masalarınıza koyduğunuz an sistem hazır! Müşterileriniz temassız menüyle büyülesin, siz satışların keyfini çıkarın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Demo Request Form Section -->
+    <section id="nfcFormSection" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-brand-500/20 rounded-bl-full blur-2xl pointer-events-none"></div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-4 py-1.5 rounded-full bg-brand-500/20 text-brand-400 font-bold text-xs uppercase tracking-wider border border-brand-500/40">Restoran ve Kafeler İçin Özel Demo</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold mt-3 mb-3">İşletmenize Özel Ücretsiz Demo Menü Hazırlayalım!</h2>
+                    <p class="text-slate-300 text-sm md:text-base">Aşağıdaki formu doldurun, restoran veya kafeniz için <b>örnek dijital menü linkinizi ve masa standı numunelerinizi</b> hazırlayıp hemen sizinle iletişime geçelim.</p>
+                </div>
+
+                <form id="contactForm" class="space-y-4 max-w-xl mx-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Yetkili Adı Soyadı *</label>
+                            <input type="text" placeholder="Örn: Burak Yılmaz" required class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Telefon / WhatsApp *</label>
+                            <input type="tel" placeholder="Örn: 0555 000 00 00" required class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Mekan / Restoran veya Kafe Adı *</label>
+                        <input type="text" placeholder="Örn: Chef's Table Bistro & Cafe / İstanbul" required class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Tahmini Masa Sayısı / Tercih Ettiğiniz Stand Türü</label>
+                        <input type="text" placeholder="Örn: 30 Masa - Doğal Ahşap veya Pleksi NFC Stand İstiyoruz" class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Ek Not veya Sorularınız</label>
+                        <textarea rows="3" placeholder="Çoklu dil desteği (İngilizce/Almanca) ve Instagram takipçi artırma modülü hakkında detaylı bilgi almak istiyorum..." class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn"
+                        class="hover-target w-full py-4 rounded-xl bg-brand-500 text-slate-900 font-extrabold text-lg hover:bg-brand-400 shadow-[0_0_20px_rgba(34,197,94,0.4)] transform hover:-translate-y-1 transition-all mt-4">
+                        <i class="fa-solid fa-utensils mr-2"></i> Ücretsiz Demo & Stand Teklifi Alın
+                    </button>
+                    <div id="successMsg" class="hidden mt-4 p-4 rounded-xl bg-brand-500/20 border border-brand-500/50 text-brand-300 text-sm font-medium">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Talebiniz alındı! Restoran/Kafeniz için örnek menü tasarımıyla en kısa sürede dönüş yapacağız.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-brand-400 shadow-md">
+                            <svg class="w-5 h-5 text-brand-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                                <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900">Şaşkın<span
+                                class="text-brand-600">Soft</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">Restoran, kafe ve oteller için akıllı temassız menü çözümleri ve yaratıcı dijital büyüme ajansı.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Çözümlerimiz</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="qr-nfc-menu.html" class="text-brand-600 font-bold">QR & NFC Temassız Menü</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Sosyal Medya Yönetimi</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Performans Reklamları</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Ajans</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hakkimizda.html" class="hover:text-brand-600">Hakkımızda</a></li>
+                        <li><a href="referanslar.html" class="hover:text-brand-600">Projelerimiz</a></li>
+                        <li><a href="iletisim.html" class="hover:text-brand-600">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">İletişim</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li>7/24 Online & Çevrimiçi</li>
+                        <li>hello@saskinsoft.com</li>
+                        <li>+90 (555) 088 63 09</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 pt-8 flex justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2024 Şaşkın Software & QR Menu Solutions. Tüm hakları saklıdır.</p>
+                <div class="flex gap-4">
+                    <a href="gizlilik-politikasi.html" class="hover:text-brand-600">Gizlilik Politikası</a>
+                    <a href="cerez-politikasi.html" class="hover:text-brand-600">Çerez Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
