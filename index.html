@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şaşkın Soft | Kreatif Dijital Medya & QR Menü Ajansı</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%2318181b'/><g transform='translate(8, 8)'><path d='M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z' fill='%234ade80' stroke='%234ade80' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/><path d='M14.5 20.8H19.5' stroke='%234ade80' stroke-width='2.5' stroke-linecap='round'/></g></svg>">
+    <meta name="description"
+        content="Şaşkın Soft | Kreatif Dijital Medya, Video Prodüksiyon ve Restoran QR/NFC Akıllı Menü Ajansı. Markanızı şaşırtıcı dijital deneyimlerle büyütüyoruz.">
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN & Özel Tema Konfigürasyonu -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Özel Stil Dosyası -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#fcfcfc] text-slate-800 font-sans antialiased selection:bg-brand-400 selection:text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover-target">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-brand-400 shadow-lg">
+                        <svg class="w-6 h-6 text-brand-400" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor"
+                                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+                                stroke-linecap="round" />
+                            <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-slate-900">
+                        Şaşkın<span class="text-brand-600">Soft</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="qr-nfc-menu.html"
+                        class="text-sm font-bold text-brand-600 bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200 flex items-center gap-1.5 shadow-sm hover:bg-brand-100 transition-all">
+                        <i class="fa-solid fa-qrcode"></i> QR & NFC Menü <span
+                            class="bg-brand-500 text-slate-900 text-[10px] font-extrabold px-1.5 py-0.5 rounded-full animate-bounce">ÖZEL</span>
+                    </a>
+                    <a href="hizmetler.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Hizmetlerimiz</a>
+                    <a href="hakkimizda.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Ajansımız</a>
+                    <a href="referanslar.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Projelerimiz</a>
+                    <a href="blog.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Blog</a>
+                    <a href="iletisim.html"
+                        class="px-6 py-2.5 rounded-full bg-slate-900 text-brand-400 text-sm font-semibold hover:bg-slate-800 transition-all shadow-md transform hover:-translate-y-0.5">
+                        Tanışalım
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Mobil menüyü aç/kapat"
+                        class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="qr-nfc-menu.html"
+                    class="block px-3 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-lg">🍽️ QR & NFC
+                    Akıllı Menü (ÖZEL)</a>
+                <a href="hizmetler.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Hizmetlerimiz</a>
+                <a href="hakkimizda.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Ajansımız</a>
+                <a href="referanslar.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Projelerimiz</a>
+                <a href="blog.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Blog</a>
+                <a href="iletisim.html"
+                    class="block mt-4 px-5 py-3 rounded-xl bg-slate-900 text-brand-400 text-base font-semibold hover:bg-slate-800 mx-4">
+                    Tanışalım
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-brand-50 blur-[120px]"></div>
+            <div class="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-accent-50 blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+                <!-- Şaşkın Gözler Maskot Rozeti -->
+                <div id="saskinContainer" class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-sm font-semibold">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-500"></span>
+                        </span>
+                        Yeni Nesil Medya Ajansı
+                    </div>
+
+                    <!-- İnteraktif Şaşkın Gözler Kutusu -->
+                    <div id="saskinMaskot" onclick="triggerSaskinSurprise()"
+                        title="Fareyi hareket ettirin, gözler sizi takip eder!"
+                        class="hover-target inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900 text-white shadow-lg border border-slate-800 cursor-pointer transform hover:scale-105 transition-all">
+                        <div
+                            class="flex items-center gap-1 bg-slate-800 px-2.5 py-1 rounded-full border border-slate-700">
+                            <!-- Sol Göz -->
+                            <div
+                                class="googly-eye w-4 h-4 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                <div class="googly-pupil w-2 h-2 bg-slate-900 rounded-full absolute"></div>
+                            </div>
+                            <!-- Sağ Göz -->
+                            <div
+                                class="googly-eye w-4 h-4 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                <div class="googly-pupil w-2 h-2 bg-slate-900 rounded-full absolute"></div>
+                            </div>
+                            <!-- Ağız -->
+                            <div class="surprised-mouth w-1.5 h-1.5 rounded-full bg-brand-400 mx-0.5"></div>
+                        </div>
+                        <span
+                            class="text-xs font-heading font-bold tracking-wide text-brand-300">#ŞaşırmayaHazırOl</span>
+                    </div>
+                </div>
+
+                <h1
+                    class="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-tight">
+                    Markanızın Dijitaldeki <br class="hidden md:block" />
+                    <span class="text-gradient">En Gür Sesi.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    İçerik üretiminden performans pazarlamasına, sosyal medya yönetiminden marka kimliğine; hedef
+                    kitlenizle <b>gerçek bağlar</b> kuruyoruz.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="iletisim.html"
+                        class="hover-target px-8 py-4 rounded-full bg-slate-900 text-brand-400 font-semibold text-lg hover:bg-slate-800 shadow-lg shadow-slate-900/20 transition-all transform hover:-translate-y-1 text-center">
+                        Ücretsiz Analiz Alın
+                    </a>
+                    <a href="hizmetler.html"
+                        class="hover-target px-8 py-4 rounded-full bg-white text-slate-700 border border-slate-200 font-semibold text-lg hover:bg-brand-50 hover:text-brand-700 transition-all flex items-center justify-center gap-2">
+                        Neler Yapıyoruz? <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard/Creative Mockup Illustration with Floating Badges -->
+            <div class="mt-20 relative mx-auto max-w-5xl animate-float">
+                <!-- Floating Badge 1 -->
+                <div class="absolute -left-6 top-10 md:-left-12 md:top-20 z-20 bg-white p-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 flex items-center gap-3 animate-pulse"
+                    style="animation-duration: 4s;">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-500 font-medium">Büyüme Hızı</div>
+                        <div class="font-heading font-bold text-slate-900">+340%</div>
+                    </div>
+                </div>
+
+                <!-- Floating Badge 2 -->
+                <div class="absolute -right-6 bottom-10 md:-right-12 md:bottom-20 z-20 bg-slate-900 p-4 rounded-2xl shadow-2xl border border-slate-800 flex items-center gap-3 animate-float"
+                    style="animation-delay: 2s;">
+                    <div
+                        class="w-10 h-10 rounded-full bg-accent-500/20 flex items-center justify-center text-accent-400">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-medium">Aylık Etkileşim</div>
+                        <div class="font-heading font-bold text-white">12.5M</div>
+                    </div>
+                </div>
+
+                <!-- Main Hero Image with 3D Tilt -->
+                <div class="rounded-2xl border border-slate-200/60 bg-white/50 backdrop-blur-sm shadow-2xl overflow-hidden p-2 relative z-10 tilt-card"
+                    id="heroMockup">
+                    <img src="https://placehold.co/1200x600/18181b/4ade80?text=Creative+Campaign+Dashboard+Mockup"
+                        alt="Digital Marketing Dashboard"
+                        class="w-full rounded-xl opacity-90 border border-slate-100 object-cover tilt-content">
+
+                    <!-- Rotating Creative Badge with Googly Eyes -->
+                    <div
+                        class="absolute -right-6 -top-6 w-32 h-32 bg-white rounded-full shadow-xl flex items-center justify-center border border-slate-100 z-30 tilt-content hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-28 h-28 rotating-badge">
+                            <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                                fill="none" />
+                            <text class="font-heading font-bold text-[12px] tracking-[0.2em] fill-slate-900 uppercase">
+                                <textPath href="#circlePath">Kreatif Stüdyo • Şaşkın Soft •</textPath>
+                            </text>
+                        </svg>
+                        <div
+                            class="absolute w-11 h-11 bg-brand-400 rounded-full flex flex-col items-center justify-center text-slate-900 shadow-inner p-1 gap-0.5">
+                            <div class="flex items-center gap-1">
+                                <div
+                                    class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center shadow-sm">
+                                    <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                                </div>
+                                <div
+                                    class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center shadow-sm">
+                                    <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                                </div>
+                            </div>
+                            <div class="surprised-mouth w-2 h-2 rounded-full bg-slate-900"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Marquee Section -->
+    <div class="py-10 bg-slate-900 border-y border-slate-800 overflow-hidden relative">
+        <div class="scroller w-full">
+            <ul
+                class="scroller__inner animate-marquee flex gap-12 md:gap-24 items-center text-slate-400 font-heading text-xl md:text-3xl font-bold uppercase tracking-wider">
+                <li>#SınırlarıZorla</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Veri Odaklı Kreatif</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>Rakipleri Şaşırt</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Trendleri Belirle</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>#SınırlarıZorla</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Veri Odaklı Kreatif</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>Rakipleri Şaşırt</li>
+                <li>#SınırlarıZorla</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Veri Odaklı Kreatif</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>Rakipleri Şaşırt</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Trendleri Belirle</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>#SınırlarıZorla</li>
+                <li class="text-brand-500"><i class="fa-solid fa-bolt"></i></li>
+                <li>Veri Odaklı Kreatif</li>
+                <li class="text-accent-500"><i class="fa-solid fa-star-of-life"></i></li>
+                <li>Rakipleri Şaşırt</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Process / "Şaşkınlık" Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div
+            class="absolute top-[20%] right-[-5%] w-[40%] h-[50%] rounded-full bg-brand-100 blur-[120px] opacity-60 z-0 pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 reveal">
+                    <div
+                        class="inline-block px-4 py-2 rounded-full bg-accent-50 text-accent-600 font-semibold text-sm mb-6">
+                        İş Akışımız</div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+                        Sıradanlığı unutun.<br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Şaşırtmaya
+                            geliyoruz.</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Standart ajans prosedürlerinden sıkıldınız mı? Biz süreci eğlenceli, şeffaf ve sonuç odaklı hale
+                        getiriyoruz. Rakipleriniz "Bunu nasıl yaptılar?" derken siz kahvenizi yudumlayın.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 text-brand-400 flex items-center justify-center font-bold text-xl font-heading">
+                                1</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Dijital Röntgen (Analiz)</h4>
+                                <p class="text-slate-600">Markanızın mevcut durumunu inceler, gizli potansiyelleri ve
+                                    sektör boşluklarını tespit ederiz.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-900 text-brand-400 flex items-center justify-center font-bold text-xl font-heading">
+                                2</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Yaratıcı Fırtına (Strateji)</h4>
+                                <p class="text-slate-600">Dikkat çekici içerik fikirleri ve tam isabet performans
+                                    kampanyalarıyla stratejiyi kurarız.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500 text-slate-900 flex items-center justify-center font-bold text-xl font-heading shadow-lg shadow-brand-500/30">
+                                3</div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h4 class="text-xl font-bold text-slate-900">Şaşkınlık Efekti (Uygulama)</h4>
+                                    <!-- Küçük Şaşkın Gözler -->
+                                    <div
+                                        class="flex items-center gap-1 bg-brand-100 px-2 py-1 rounded-full border border-brand-200">
+                                        <div
+                                            class="googly-eye w-3 h-3 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                            <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute">
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="googly-eye w-3 h-3 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                                            <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute">
+                                            </div>
+                                        </div>
+                                        <div class="surprised-mouth w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600">Yayına giriyoruz! Büyüyen rakamlar ve artan etkileşimlerle
+                                    markanız dijitalde boyut atlıyor.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="hakkimizda.html"
+                            class="inline-flex items-center gap-2 font-bold text-brand-600 hover:text-brand-700">
+                            Ajans Felsefemizi Keşfedin <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 w-full reveal" style="transition-delay: 200ms;">
+                    <!-- Interactive Elements Box -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                        <div
+                            class="absolute -top-10 -right-10 w-40 h-40 bg-accent-200 rounded-full blur-3xl opacity-60 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-200 rounded-full blur-3xl opacity-60 pointer-events-none">
+                        </div>
+
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-8 relative z-10">Canlı Raporlama
+                            Kesiti</h3>
+
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-2">
+                                    <span class="text-slate-700">Marka Bilinirliği Artışı</span>
+                                    <span class="text-brand-600">%85</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                    <div class="bg-brand-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-2">
+                                    <span class="text-slate-700">Organik Trafik</span>
+                                    <span class="text-accent-500">%120</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                    <div class="bg-accent-500 h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-2">
+                                    <span class="text-slate-700">Rakiplerin Şaşkınlık Seviyesi</span>
+                                    <span class="text-slate-900">Maksimum!</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2.5 p-0.5">
+                                    <div class="bg-slate-900 h-1.5 rounded-full w-full relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-white/20 w-full animate-pulse"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 bg-slate-50 relative overflow-hidden">
+        <div
+            class="absolute top-10 left-10 w-64 h-64 bg-brand-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-float pointer-events-none">
+        </div>
+        <div class="absolute bottom-10 right-10 w-64 h-64 bg-accent-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-float pointer-events-none"
+            style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 text-brand-700 font-bold text-xs uppercase tracking-wider mb-3 border border-brand-200/60 shadow-sm">
+                    <i class="fa-solid fa-bolt text-brand-600"></i> Neler Yapıyoruz? • Uzmanlık Alanlarımız
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Markanıza Büyüme Katacak <span
+                        class="text-gradient">Somut Çözümler</span></h2>
+                <p class="text-slate-600 text-base max-w-2xl mx-auto mt-3">Teorik ve düz kurumsal yazılar yerine;
+                    işletmenize doğrudan değer katan, müşterilerinizin dikkatini çeken ve satışa dönüşen somut projeler
+                    üretiyoruz.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: QR ve NFC Menü -->
+                <div class="service-card glass-card rounded-2xl p-8 reveal flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-brand-100/70 flex items-center justify-center mb-6 backdrop-blur-md group-hover:bg-brand-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i
+                                class="fa-solid fa-qrcode text-2xl text-brand-600 group-hover:text-white service-icon transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-600 block mb-1">Akıllı
+                            Temassız Menü</span>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">QR & NFC Menü Sistemleri</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Restoran, kafe ve oteller için uygulamasız 0.3 saniyede açılan akıllı menüler ve şık
+                            ahşap/pleksi masa stantlarıyla matbaa masrafını bitiriyoruz.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60"><i
+                                    class="fa-solid fa-bolt text-amber-500 mr-1"></i>0.3s Hızlı Erişim</span>
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60">Ahşap
+                                / Pleksi Stant</span>
+                        </div>
+                    </div>
+                    <a href="qr-nfc-menu.html"
+                        class="text-brand-600 text-sm font-semibold hover:text-brand-700 transition-colors inline-flex items-center gap-1.5 group-hover:translate-x-1 duration-200">
+                        Menü Sistemini İncele <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Kurumsal Web & E-Ticaret Siteleri -->
+                <div class="service-card glass-card rounded-2xl p-8 reveal flex flex-col justify-between group"
+                    style="transition-delay: 100ms;">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-accent-100/70 flex items-center justify-center mb-6 backdrop-blur-md group-hover:bg-accent-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i
+                                class="fa-solid fa-laptop-code text-2xl text-accent-500 group-hover:text-white service-icon transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-accent-500 block mb-1">Yüksek Hız &
+                            Dönüşüm</span>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Kurumsal Web Siteleri</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Sıradan şablonlar yerine; işletmenize özel tasarlanan, mobil uyumlu, Google SEO dostu ve
+                            ziyaretçileri anında müşteriye dönüştüren web & e-ticaret siteleri.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60"><i
+                                    class="fa-solid fa-rocket text-blue-500 mr-1"></i>%100 Mobil & Hızlı</span>
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60">Özel
+                                Tasarım UI/UX</span>
+                        </div>
+                    </div>
+                    <a href="hizmetler.html"
+                        class="text-accent-500 text-sm font-semibold hover:text-accent-600 transition-colors inline-flex items-center gap-1.5 group-hover:translate-x-1 duration-200">
+                        Web Çözümlerine Bak <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Logo & Kurumsal Kimlik Tasarımları -->
+                <div class="service-card glass-card rounded-2xl p-8 reveal flex flex-col justify-between group"
+                    style="transition-delay: 200ms;">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-purple-100/70 flex items-center justify-center mb-6 backdrop-blur-md group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i
+                                class="fa-solid fa-wand-magic-sparkles text-2xl text-purple-600 group-hover:text-white service-icon transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 block mb-1">Prestij &
+                            Güven</span>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Logo Tasarımları</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            İlk görüşte hayran bırakan, markanızın hikayesini yansıtan modern logo tasarımları,
+                            kartvizit, ambalaj grafikleri ve eksiksiz kurumsal kimlik kılavuzu.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60"><i
+                                    class="fa-solid fa-gem text-purple-500 mr-1"></i>Özgün Logo</span>
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60">Kurumsal
+                                Kimlik</span>
+                        </div>
+                    </div>
+                    <a href="hizmetler.html"
+                        class="text-purple-600 text-sm font-semibold hover:text-purple-700 transition-colors inline-flex items-center gap-1.5 group-hover:translate-x-1 duration-200">
+                        Tasarım Detayları <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: İçerik Prodüksiyon & Reklam Çalışmaları -->
+                <div class="service-card glass-card rounded-2xl p-8 reveal flex flex-col justify-between group"
+                    style="transition-delay: 300ms;">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-emerald-100/70 flex items-center justify-center mb-6 backdrop-blur-md group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i
+                                class="fa-solid fa-clapperboard text-2xl text-emerald-600 group-hover:text-white service-icon transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-1">Viral & Çok
+                            Satan</span>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">İçerik & Reklam Prodüksiyon</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                            Binlerce izlenen Reels & TikTok videoları, profesyonel ürün & mekan çekimleri ile doğrudan
+                            satış getiren hedefli reklam kurguları oluşturuyoruz.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60"><i
+                                    class="fa-solid fa-fire text-orange-500 mr-1"></i>Reels & TikTok</span>
+                            <span
+                                class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60">Hedefli
+                                Reklamlar</span>
+                        </div>
+                    </div>
+                    <a href="hizmetler.html"
+                        class="text-emerald-600 text-sm font-semibold hover:text-emerald-700 transition-colors inline-flex items-center gap-1.5 group-hover:translate-x-1 duration-200">
+                        Prodüksiyon & Reklam <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Zarif ve Şık Sektörel Uzmanlık Kartı (Göz Yormadan, Hizmetler İçinde) -->
+            <div class="mt-10 reveal">
+                <div
+                    class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 md:p-10 text-white shadow-xl border border-slate-800/80 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div
+                        class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-500/10 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div class="max-w-2xl space-y-3 relative z-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 font-bold text-xs uppercase tracking-wider border border-brand-500/30">
+                            <i class="fa-solid fa-star text-amber-400"></i> Öne Çıkan Sektörel Teknoloji Çözümümüz
+                        </div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold leading-tight">
+                            Restoran & Kafeler İçin Akıllı QR ve NFC Temassız Menü Altyapısı
+                        </h3>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            Yeme-içme sektörüne özel sunduğumuz şık ahşap ve pleksi masa stantlarıyla müşterilerinize
+                            uygulamasız, 0.3 saniyede açılan dijital menü deneyimi sunuyor ve matbaa masraflarını
+                            sıfırlıyoruz.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 relative z-10 w-full md:w-auto text-center md:text-right">
+                        <a href="qr-nfc-menu.html"
+                            class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-brand-500 text-slate-900 font-bold text-base hover:bg-brand-400 transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] transform hover:-translate-y-1 w-full md:w-auto">
+                            <span>Çözümü İncele</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="hizmetler.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all">
+                    Tüm Hizmetlerimizi İnceleyin <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
+        <div
+            class="absolute top-[30%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent-50 blur-[130px] opacity-70 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="font-heading text-brand-600 font-bold tracking-wider uppercase text-sm block mb-2">Seçkin
+                    İşlerimiz</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Başarı Hikayeleri & Projelerimiz</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mt-4 text-lg">Markalar için yarattığımız dijital etki,
+                    verilerle desteklenen stratejiler ve şaşırtıcı dönüşüm oranları.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="service-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all group reveal">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=GastroVibe+QR+%26+NFC+Menu"
+                            alt="GastroVibe Akıllı Menü Dönüşümü"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">
+                            Restoran • QR & NFC Menü
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Temassız Masa
+                                Standı</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">%100
+                                Dijital Hız</span>
+                        </div>
+                        <h3
+                            class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
+                            GastroVibe Lounge: Akıllı Menü Dönüşümü</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Kağıt menü masrafını sıfırladık; masalara yerleştirdiğimiz ahşap NFC ve QR stantlarıyla
+                            uygulamasız menü deneyimi ve saniyeler içinde sipariş kolaylığı sağladık.
+                        </p>
+                        <a href="qr-nfc-menu.html"
+                            class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Menü Çözümünü İncele <i
+                                class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all group reveal"
+                    style="transition-delay: 150ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/8b5cf6?text=NovaModa+Growth+Ads"
+                            alt="NovaModa Performans Pazarlama"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">
+                            E-Ticaret • Performans
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Meta & Google
+                                Ads</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">4.8x ROAS
+                                Artışı</span>
+                        </div>
+                        <h3
+                            class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
+                            NovaModa: Global Satış Reklamları</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Yapay zeka destekli hedefleme ve dinamik video reklam içerikleriyle reklam bütçesinin satış
+                            getirisini 5 katına çıkardık.
+                        </p>
+                        <a href="referanslar.html"
+                            class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Proje Detayını İncele <i
+                                class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all group reveal"
+                    style="transition-delay: 300ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/a78bfa?text=Z-Gen+Viral+TikTok+Reels"
+                            alt="Z-Gen Viral TikTok Kampanyası"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">
+                            Video Prodüksiyon • Reels
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">TikTok & Reels
+                                Stüdyosu</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">15M+
+                                Organik İzlenme</span>
+                        </div>
+                        <h3
+                            class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
+                            Z-Gen Energy: Viral TikTok Akımı</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            30 saniyelik yaratıcı dikey video serileri, ASMR ses kurgusu ve influencer işbirlikleri ile
+                            sosyal medyada viral organik etki yarattık.
+                        </p>
+                        <a href="referanslar.html"
+                            class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Proje Detayını İncele <i
+                                class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Müşterilerimize Yaptığımız Reklam & Dijital Dönüşüm Sonrası Google İşletme Puanı Örneği (1 Adet) -->
+            <div class="mt-14 reveal">
+                <div
+                    class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 md:p-10 text-white shadow-2xl border border-slate-800/80 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+                    <!-- Arka Plan Dekoratif -->
+                    <div
+                        class="absolute -top-10 -right-10 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none">
+                    </div>
+
+                    <div class="max-w-xl space-y-4 relative z-10 text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-400 font-bold text-xs uppercase tracking-wider border border-brand-500/30">
+                            <i class="fa-solid fa-chart-line text-brand-400"></i> Reklam & Dijital Dönüşüm Etkisi Örneği
+                        </div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold leading-tight">
+                            Yürüttüğümüz Kampanyalar Sonrası Müşterimizin Google İşletme Puanı
+                        </h3>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            GastroVibe Lounge için hayata geçirdiğimiz yerel Google & Meta reklam kampanyaları ve
+                            temassız QR akıllı menü yönlendirmeleri sayesinde, işletmenin Google Haritalar üzerindeki
+                            müşteri değerlendirmeleri ve toplam puanı kısa sürede zirveye ulaştı.
+                        </p>
+                        <div
+                            class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs text-slate-300 font-medium">
+                            <span
+                                class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i
+                                    class="fa-solid fa-arrow-trend-up text-brand-400"></i> %340 Yorum Artışı</span>
+                            <span
+                                class="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700"><i
+                                    class="fa-solid fa-star text-amber-400"></i> 4.9 Ort. Puan</span>
+                        </div>
+                    </div>
+
+                    <!-- 1 Tane Örnek Müşteri Google İşletme Puanı Kartı -->
+                    <div
+                        class="bg-white rounded-2xl p-6 md:p-7 text-slate-800 shadow-2xl border border-slate-100 max-w-md w-full relative z-10 transform hover:scale-[1.02] transition-all">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 border border-slate-200/60 shadow-inner">
+                                    <!-- Google Logo -->
+                                    <svg class="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                            fill="#4285F4" />
+                                        <path
+                                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                            fill="#34A853" />
+                                        <path
+                                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                                            fill="#FBBC05" />
+                                        <path
+                                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                                            fill="#EA4335" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-heading font-extrabold text-slate-900 text-base md:text-lg leading-tight">
+                                        GastroVibe Lounge & Bar</h4>
+                                    <span class="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
+                                        <i class="fa-solid fa-check-circle text-brand-600"></i> Google Doğrulanmış
+                                        İşletme Profili
+                                    </span>
+                                </div>
+                            </div>
+                            <span
+                                class="bg-brand-50 text-brand-700 text-[11px] font-extrabold px-2.5 py-1 rounded-full border border-brand-200">
+                                ÖRNEK
+                            </span>
+                        </div>
+
+                        <!-- Puan ve Yıldız Özeti -->
+                        <div
+                            class="flex items-center justify-between bg-slate-50 p-4 rounded-xl border border-slate-200/60 mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="font-heading text-4xl font-extrabold text-slate-900">4.9</div>
+                                <div>
+                                    <div class="flex text-amber-400 text-base gap-0.5">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-600 mt-0.5 block">1,240+
+                                        Değerlendirme</span>
+                                </div>
+                            </div>
+                            <div class="text-right pl-2 border-l border-slate-200">
+                                <span
+                                    class="text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-md block">+340
+                                    Yorum</span>
+                                <span class="text-[10px] text-slate-400 mt-0.5 block">Reklam Sonrası</span>
+                            </div>
+                        </div>
+
+                        <!-- Müşterinin Müşterisinden Örnek Yorum Alıntısı -->
+                        <div class="bg-brand-50/60 rounded-xl p-3.5 border border-brand-100/80">
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-500 text-slate-900 font-bold text-[10px] flex items-center justify-center">
+                                    MŞ
+                                </div>
+                                <span class="text-xs font-bold text-slate-800">Mert Şahin <span
+                                        class="font-normal text-slate-500">(İşletme Ziyaretçisi)</span></span>
+                                <span class="ml-auto flex text-amber-400 text-[10px] gap-0.5">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-600 italic leading-relaxed">
+                                "Google haritalardaki yüksek puanı ve yorumları görüp geldik. Masa üstündeki QR menü çok
+                                pratik ve hızlı, servis harika. Kesinlikle 5 yıldız!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="referanslar.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-500 text-slate-900 font-bold hover:bg-brand-400 transition-all">
+                    Tüm Projelerimizi Görün <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100 text-center reveal">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-brand-600 mb-2">50+</div>
+                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Mutlu Marka</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-brand-600 mb-2">12M+</div>
+                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Aylık Gösterim</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-brand-600 mb-2">400+</div>
+                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Üretilen İçerik</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-extrabold text-brand-600 mb-2">4x</div>
+                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wide">Ort. Dönüşüm Artışı</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section class="py-24 relative overflow-hidden bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+            <div
+                class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800 text-center relative overflow-hidden">
+
+                <!-- Decorative element -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/20 rounded-bl-full -z-0 blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent-500/20 rounded-tr-full -z-0 blur-2xl"></div>
+
+                <div class="relative z-10">
+                    <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-white mb-4">Markanızı Büyütmeye
+                        Hazır mısınız?</h2>
+                    <p class="text-slate-300 mb-8 max-w-2xl mx-auto text-lg">
+                        Kahvemizi içerken markanızın dijital röntgenini çekelim. Size özel yol haritanızı oluşturmak
+                        için bize ulaşın.
+                    </p>
+
+                    <form id="contactForm" class="max-w-md mx-auto space-y-4">
+                        <div>
+                            <input type="text" placeholder="Adınız Soyadınız" required
+                                class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Kurumsal E-posta Adresiniz" required
+                                class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Marka veya Şirket Adı"
+                                class="hover-target w-full px-5 py-4 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        </div>
+                        <button type="submit" id="submitBtn"
+                            class="hover-target w-full py-4 rounded-xl bg-brand-500 text-slate-900 font-bold text-lg hover:bg-brand-400 shadow-[0_0_15px_rgba(34,197,94,0.3)] transform hover:-translate-y-1 transition-all">
+                            Ücretsiz Görüşme Ayarla
+                        </button>
+                        <div class="relative flex py-3 items-center">
+                            <div class="flex-grow border-t border-slate-700/60"></div>
+                            <span class="flex-shrink mx-3 text-slate-400 text-xs uppercase tracking-wider font-semibold">Veya Hızlıca</span>
+                            <div class="flex-grow border-t border-slate-700/60"></div>
+                        </div>
+                        <a href="https://wa.me/905550886309?text=Merhaba%20Şaşkın%20Soft%20ekibi,%20hizmetleriniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" 
+                           class="hover-target w-full py-3.5 rounded-xl bg-[#25D366]/15 border border-[#25D366]/50 text-[#25D366] font-bold text-base hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-2.5 shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp ile Anında Yazın
+                        </a>
+                        <div id="successMsg"
+                            class="hidden mt-4 p-4 rounded-xl bg-brand-500/20 border border-brand-500/50 text-brand-300 text-sm font-medium">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Harika! Mesajınız bize ulaştı. En kısa sürede
+                            şaşırtıcı fikirlerle size döneceğiz.
+                        </div>
+                    </form>
+                    <p class="mt-4 text-xs text-slate-400">Bilgileriniz KVKK ve <a href="gizlilik-politikasi.html"
+                            class="underline hover:text-white">Gizlilik Politikası</a> kapsamında korunmaktadır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-brand-400 shadow-md">
+                            <svg class="w-5 h-5 text-brand-400" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+                                    stroke-linecap="round" />
+                                <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900">Şaşkın<span
+                                class="text-brand-600">Soft</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">
+                        Dijital dünyada iz bırakan markalar yaratmak için veri ve yaratıcılığı harmanlayan yeni nesil
+                        medya ajansı.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Instagram Sayfamız"
+                            onclick="showToast('Instagram profilimiz yakında aktif olacak.'); return false;"
+                            class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn Sayfamız"
+                            onclick="showToast('LinkedIn profilimiz yakında aktif olacak.'); return false;"
+                            class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok Sayfamız"
+                            onclick="showToast('TikTok profilimiz yakında aktif olacak.'); return false;"
+                            class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="qr-nfc-menu.html"
+                                class="hover:text-brand-600 transition-colors font-medium text-slate-700">Akıllı QR &
+                                NFC Menü (Özel Çözüm)</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600 transition-colors">Sosyal Medya
+                                Yönetimi</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600 transition-colors">Performans Pazarlama
+                                (Ads)</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600 transition-colors">İçerik & Prodüksiyon
+                                Stüdyosu</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600 transition-colors">Kurumsal Kimlik
+                                Tasarımı</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600 transition-colors">Influencer
+                                Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Ajans</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hakkimizda.html" class="hover:text-brand-600 transition-colors">Hakkımızda</a></li>
+                        <li><a href="referanslar.html" class="hover:text-brand-600 transition-colors">Başarı Hikayeleri
+                                & Projeler</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-600 transition-colors">Blog & İçgörüler</a></li>
+                        <li><a href="iletisim.html" class="hover:text-brand-600 transition-colors">İletişim & Konum</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">İletişim</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-slate-400"></i>
+                            <span>Didim, Aydın</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-slate-400"></i>
+                            <a href="mailto:hello@saskinsoft.com" class="hover:text-brand-600">hello@saskinsoft.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-slate-400"></i>
+                            <a href="tel:+905550886309" class="hover:text-brand-600">+90 (555) 088 63 09</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-400 text-sm">
+                    &copy; 2024 Şaşkın Software. Tüm hakları saklıdır.
+                </p>
+                <div class="flex gap-4 text-sm text-slate-400">
+                    <a href="gizlilik-politikasi.html" class="hover:text-brand-600 transition-colors">Gizlilik
+                        Politikası</a>
+                    <a href="cerez-politikasi.html" class="hover:text-brand-600 transition-colors">Çerez Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ana JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projelerimiz & Başarı Hikayeleri | Şaşkın Soft</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%2318181b'/><g transform='translate(8, 8)'><path d='M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z' fill='%234ade80' stroke='%234ade80' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/><path d='M14.5 20.8H19.5' stroke='%234ade80' stroke-width='2.5' stroke-linecap='round'/></g></svg>">
+    <meta name="description" content="Şaşkın Soft tarafından restoran, kafe ve e-ticaret markaları için hayata geçirilen QR/NFC menü, sosyal medya ve video prodüksiyon başarı hikayeleri.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#fcfcfc] text-slate-800 font-sans antialiased selection:bg-brand-400 selection:text-slate-900">
+
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover-target">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-brand-400 shadow-lg">
+                        <svg class="w-6 h-6 text-brand-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                            <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-slate-900">
+                        Şaşkın<span class="text-brand-600">Soft</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="qr-nfc-menu.html" class="text-sm font-bold text-brand-600 bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200 flex items-center gap-1.5 shadow-sm hover:bg-brand-100 transition-all">
+                        <i class="fa-solid fa-qrcode"></i> QR & NFC Menü <span class="bg-brand-500 text-slate-900 text-[10px] font-extrabold px-1.5 py-0.5 rounded-full animate-bounce">ÖZEL</span>
+                    </a>
+                    <a href="hizmetler.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Hizmetlerimiz</a>
+                    <a href="hakkimizda.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Ajansımız</a>
+                    <a href="referanslar.html" class="text-sm font-bold text-brand-600 transition-colors">Projelerimiz</a>
+                    <a href="blog.html" class="text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors">Blog</a>
+                    <a href="iletisim.html" class="px-6 py-2.5 rounded-full bg-slate-900 text-brand-400 text-sm font-semibold hover:bg-slate-800 transition-all shadow-md transform hover:-translate-y-0.5">
+                        Tanışalım
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Mobil menüyü aç/kapat" class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="qr-nfc-menu.html" class="block px-3 py-3 text-base font-bold text-brand-600 bg-brand-50 rounded-lg">🍽️ QR & NFC Akıllı Menü (ÖZEL)</a>
+                <a href="hizmetler.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Hizmetlerimiz</a>
+                <a href="hakkimizda.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Ajansımız</a>
+                <a href="referanslar.html" class="block px-3 py-3 text-base font-bold text-brand-600 bg-slate-50 rounded-lg">Projelerimiz</a>
+                <a href="blog.html" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-lg">Blog</a>
+                <a href="iletisim.html" class="block mt-4 px-5 py-3 rounded-xl bg-slate-900 text-brand-400 text-base font-semibold hover:bg-slate-800 mx-4">Tanışalım</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-36 pb-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <div id="saskinMaskot" onclick="triggerSaskinSurprise()" title="Gözler sizi takip ediyor!" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 mb-6 cursor-pointer hover:scale-105 transition-all">
+                <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-full">
+                    <div class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                        <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                    </div>
+                    <div class="googly-eye w-3.5 h-3.5 bg-white rounded-full relative overflow-hidden flex items-center justify-center">
+                        <div class="googly-pupil w-1.5 h-1.5 bg-slate-900 rounded-full absolute"></div>
+                    </div>
+                    <div class="surprised-mouth w-1.5 h-1.5 rounded-full bg-brand-400"></div>
+                </div>
+                <span class="text-xs font-heading font-bold text-brand-300">İz Bırakan İşler</span>
+            </div>
+            <h1 class="font-heading text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Şaşırtıcı Dönüşüm <span class="text-brand-400">Hikayelerimiz.</span></h1>
+            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Farklı sektörlerdeki markalar için tasarladığımız veri odaklı, viral ve estetik projeler.</p>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filter Tabs -->
+            <div class="flex justify-center mb-16 reveal">
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-slate-100/80 p-2 rounded-2xl border border-slate-200/60 backdrop-blur-md shadow-sm">
+                    <button onclick="filterProjects('all', this)" class="project-filter-btn px-5 py-2.5 rounded-xl bg-slate-900 text-brand-400 font-bold text-xs shadow-md flex items-center gap-2 transition-all duration-300 scale-105">
+                        <span>⚡ Tümü</span>
+                        <span class="bg-slate-800 text-brand-400 text-[10px] px-2 py-0.5 rounded-full font-extrabold">6</span>
+                    </button>
+                    <button onclick="filterProjects('qr', this)" class="project-filter-btn px-5 py-2.5 rounded-xl bg-white/60 hover:bg-white text-slate-600 hover:text-slate-900 font-semibold text-xs border border-transparent hover:border-slate-200/80 flex items-center gap-2 transition-all duration-300">
+                        <span>🍽️ QR & NFC Akıllı Menü</span>
+                        <span class="bg-slate-200/70 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-bold">2</span>
+                    </button>
+                    <button onclick="filterProjects('sosyal', this)" class="project-filter-btn px-5 py-2.5 rounded-xl bg-white/60 hover:bg-white text-slate-600 hover:text-slate-900 font-semibold text-xs border border-transparent hover:border-slate-200/80 flex items-center gap-2 transition-all duration-300">
+                        <span>📱 Sosyal Medya & Reklam</span>
+                        <span class="bg-slate-200/70 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-bold">3</span>
+                    </button>
+                    <button onclick="filterProjects('video', this)" class="project-filter-btn px-5 py-2.5 rounded-xl bg-white/60 hover:bg-white text-slate-600 hover:text-slate-900 font-semibold text-xs border border-transparent hover:border-slate-200/80 flex items-center gap-2 transition-all duration-300">
+                        <span>🎬 Video Prodüksiyon</span>
+                        <span class="bg-slate-200/70 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-bold">2</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proje 1 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="qr">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=GastroVibe+QR+%26+NFC+Menu" alt="GastroVibe Akıllı Menü" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">Restoran • QR & NFC Menü</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Temassız Masa Standı</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">%100 Dijital Hız</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">GastroVibe Lounge: Akıllı Menü Dönüşümü</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Kağıt menü masrafını sıfırladık; masalara yerleştirdiğimiz ahşap NFC ve QR stantlarıyla uygulamasız menü deneyimi ve saniyeler içinde sipariş kolaylığı sağladık.</p>
+                        <a href="qr-nfc-menu.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Menü Çözümünü İncele <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proje 2 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="sosyal" style="transition-delay: 150ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/8b5cf6?text=NovaModa+Growth+Ads" alt="NovaModa Performans Pazarlama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">E-Ticaret • Performans</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Meta & Google Ads</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">4.8x ROAS Artışı</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">NovaModa: Global Satış Reklamları</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Yapay zeka destekli hedefleme ve dinamik video reklam içerikleriyle reklam bütçesinin satış getirisini 5 katına çıkardık.</p>
+                        <a href="iletisim.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Reklam Detayını Sorun <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proje 3 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="video" style="transition-delay: 300ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/a78bfa?text=Z-Gen+Viral+TikTok+Reels" alt="Z-Gen Viral TikTok Kampanyası" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">Video Prodüksiyon • Reels</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">TikTok & Reels Stüdyosu</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">15M+ Organik İzlenme</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Z-Gen Energy: Viral TikTok Akımı</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">30 saniyelik yaratıcı dikey video serileri, ASMR ses kurgusu ve influencer işbirlikleri ile sosyal medyada viral organik etki yarattık.</p>
+                        <a href="iletisim.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Stüdyomuzla Tanışın <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proje 4 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="qr">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/38bdf8?text=Chefs+Table+NFC+Menu" alt="Chef's Table NFC Menü" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">Turizm & Otelcilik • Akıllı Menü</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Deri & Pleksi Masa Stantları</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">6 Dil Desteği</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Chef's Table: Çok Dilli Temassız Menü</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Turistik otel zinciri için misafirin telefon dilini anında tanıyan, garson çağırma özellikli ve 6 dilde çalışan akıllı NFC menü sistemini devreye aldık.</p>
+                        <a href="qr-nfc-menu.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Menü Çözümünü İncele <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proje 5 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="sosyal" style="transition-delay: 150ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/f43f5e?text=GastroVibe+Social+Reels" alt="GastroVibe Sosyal Medya Yönetimi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">Restoran • Sosyal Medya</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Instagram Yönetimi & Çekim</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">+180% Rezervasyon</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">GastroVibe: Lezzetin Görsel Şöleni</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">İştah açıcı mikro video çekimleri, gurme konsept kurgular ve profesyonel hesap yönetimiyle mekanın aylık rezervasyon taleplerini ikiye katladık.</p>
+                        <a href="iletisim.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Sosyal Medya Teklifi Alın <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proje 6 -->
+                <div class="service-card project-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 group reveal" data-category="video sosyal" style="transition-delay: 300ms;">
+                    <div class="relative h-60 overflow-hidden bg-slate-900">
+                        <img src="https://placehold.co/600x400/18181b/fbbf24?text=Lumiere+Luxury+Jewelry+Ads" alt="Lumiere Konsept Çekim" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">Kreatif Prodüksiyon • Reklam</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600">Konsept Çekim & Kampanya</span>
+                            <span class="text-sm font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">+310% Etkileşim</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Lumiere: Zarafetin Dijital Işığı</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Yüksek çözünürlüklü konsept video çekimleri, seçkin hedef kitle reklam filtrelemesi ve modern estetik sosyal medya akış tasarımı.</p>
+                        <a href="iletisim.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                            Prodüksiyon Detayı Sorun <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-brand-400 shadow-md">
+                            <svg class="w-5 h-5 text-brand-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 3L4.5 13H11.5L9.5 21L18 10.5H11.5L13 3Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                                <path d="M14.5 20.8H19.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="font-heading font-bold text-xl text-slate-900">Şaşkın<span class="text-brand-600">Soft</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">Dijital dünyada iz bırakan markalar yaratmak için veri ve yaratıcılığı harmanlayan yeni nesil medya ajansı.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Sosyal Medya Yönetimi</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">Performans Pazarlama</a></li>
+                        <li><a href="hizmetler.html" class="hover:text-brand-600">İçerik & Prodüksiyon</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Ajans</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="hakkimizda.html" class="hover:text-brand-600">Hakkımızda</a></li>
+                        <li><a href="referanslar.html" class="text-brand-600 font-bold">Projelerimiz</a></li>
+                        <li><a href="iletisim.html" class="hover:text-brand-600">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">İletişim</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li>Didim, Aydın</li>
+                        <li>hello@saskinsoft.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 pt-8 flex justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2024 Şaşkın Software. Tüm hakları saklıdır.</p>
+                <div class="flex gap-4">
+                    <a href="gizlilik-politikasi.html" class="hover:text-brand-600">Gizlilik Politikası</a>
+                    <a href="cerez-politikasi.html" class="hover:text-brand-600">Çerez Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        /* ŞaşkınSoft | Projelerimiz Dinamik & Estetik Kategori Filtreleme */
+        function filterProjects(category, btnElem) {
+            // Butonların stilini güncelle
+            document.querySelectorAll('.project-filter-btn').forEach(btn => {
+                btn.className = 'project-filter-btn px-5 py-2.5 rounded-xl bg-white/60 hover:bg-white text-slate-600 hover:text-slate-900 font-semibold text-xs border border-transparent hover:border-slate-200/80 flex items-center gap-2 transition-all duration-300';
+                const badge = btn.querySelector('span:last-child');
+                if (badge) badge.className = 'bg-slate-200/70 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-bold';
+            });
+
+            if (btnElem) {
+                btnElem.className = 'project-filter-btn px-5 py-2.5 rounded-xl bg-slate-900 text-brand-400 font-bold text-xs shadow-md flex items-center gap-2 transition-all duration-300 scale-105';
+                const badge = btnElem.querySelector('span:last-child');
+                if (badge) badge.className = 'bg-slate-800 text-brand-400 text-[10px] px-2 py-0.5 rounded-full font-extrabold';
+            }
+
+            // Kartları filtrele ve animasyonla göster/gizle
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category') || '';
+                if (category === 'all' || cardCategories.split(' ').includes(category)) {
+                    card.style.display = '';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        if (card.style.opacity === '0') {
+                            card.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
